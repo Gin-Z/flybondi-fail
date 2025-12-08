@@ -1,0 +1,26 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+.flights-grid i{
+    font-size: 2rem;
+}
+
+.status-cancelled{
+    color:gray;
+}
+
+.status-45plus{
+    color:red;
+}
+
+.status-45_30{
+    color:orange;
+}
+
+.status-30_15{
+    color:gold;
+}
+
+.status-15_0{
+    color:rgb(74, 180, 74);
+}
