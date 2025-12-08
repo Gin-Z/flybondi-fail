@@ -1,8 +1,74 @@
-const Mean =() =>{
-   const totalWidth = 500;       // ancho ideal del gráfico
+import { useFlights } from "../context/FlightsContext";
+import type { Flight } from "../types/Flight.interface";
+
+const Mean = () => {
+  const { flights, loading } = useFlights();
+
+  // Función para calcular la demora en minutos
+  const calculateDelay = (flight: Flight): number | null => {
+    if (!flight.despegue_real) return null; // Cancelado
+
+    const [estimatedHours, estimatedMinutes] = flight.despegue_estimado.split(':').map(Number);
+    const [realHours, realMinutes] = flight.despegue_real.split(':').map(Number);
+
+    const estimatedTotalMinutes = estimatedHours * 60 + estimatedMinutes;
+    let realTotalMinutes = realHours * 60 + realMinutes;
+
+    // Si el vuelo real es mucho menor que el estimado, probablemente cruzó medianoche
+    if (realTotalMinutes < estimatedTotalMinutes - 12 * 60) {
+      realTotalMinutes += 24 * 60; // Sumar 24 horas al tiempo real
+    }
+
+    return realTotalMinutes - estimatedTotalMinutes;
+  };
+
+  // Calcular promedio de demoras (solo vuelos que despegaron)
+  const flightsWithDelay = flights
+    .map(f => calculateDelay(f))
+    .filter((delay): delay is number => delay !== null);
+
+  const totalFlights = flightsWithDelay.length;
+  const averageDelayMinutes = totalFlights > 0
+    ? Math.round(flightsWithDelay.reduce((sum, delay) => sum + delay, 0) / totalFlights)
+    : 0;
+
+  // Configuración del gráfico
+  const totalWidth = 500;
   const barHeight = 25;
   const barBgWidth = 440;
-  const barWidth = 45.5;        // barra de 18min aprox
+  const maxMinutes = 180; // 3 horas = 180 minutos
+
+  // Calcular el ancho de la barra según el promedio
+  // Si averageDelayMinutes > 180, la barra será del ancho máximo
+  const barWidth = Math.min((averageDelayMinutes / maxMinutes) * barBgWidth, barBgWidth);
+
+  // Formatear el tiempo de demora
+  const formatDelay = (minutes: number): string => {
+    if (minutes < 60) {
+      return `${minutes} min`;
+    }
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+    return mins > 0 ? `${hours}h ${mins}min` : `${hours}h`;
+  };
+
+  if (loading) {
+    return (
+      <div className="card p-3 text-center">
+        <div className="spinner-border spinner-border-sm" role="status">
+          <span className="visually-hidden">Cargando...</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (totalFlights === 0) {
+    return (
+      <div className="card p-3 text-center">
+        <h5 className="m-0">No hay datos de vuelos</h5>
+      </div>
+    );
+  }
 
   return (
     <div className="card p-3 text-center">
@@ -16,8 +82,8 @@ const Mean =() =>{
         viewBox={`0 0 ${totalWidth} 150`}
         width="100%"
         height="150"
-        preserveAspectRatio="xMidYMid meet"  
-        style={{ display: "block", margin: "0 auto" }} 
+        preserveAspectRatio="xMidYMid meet"
+        style={{ display: "block", margin: "0 auto" }}
       >
         {/* Texto */}
         <text
@@ -27,15 +93,15 @@ const Mean =() =>{
           fontSize="22"
           fontWeight="600"
         >
-          Flybondi 
+          Flybondi
           <tspan opacity="0.6" fontSize="20" fontWeight="400">
-            {" "}36 vuelos
+            {" "}{totalFlights} vuelos
           </tspan>
         </text>
 
         {/* Barra fondo */}
         <rect
-          x={(totalWidth - barBgWidth) / 2}  
+          x={(totalWidth - barBgWidth) / 2}
           y="45"
           width={barBgWidth}
           height={barHeight}
@@ -60,7 +126,7 @@ const Mean =() =>{
           textAnchor="middle"
           fontSize="20"
         >
-          18 min
+          {formatDelay(averageDelayMinutes)}
         </text>
 
         {/* Ticks */}
@@ -77,5 +143,6 @@ const Mean =() =>{
       </svg>
     </div>
   );
-}
+};
+
 export default Mean;
