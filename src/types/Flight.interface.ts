@@ -1,5 +1,5 @@
 export interface Flight {
-    id: string,
+    vuelo: string,
     fecha: string,
     ruta: string,
     despegue_estimado: string,

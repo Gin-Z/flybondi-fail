@@ -1,5 +1,432 @@
 [
   {
+    "vuelo": "FO 5184",
+    "fecha": "2025-12-08",
+    "ruta": "Ezeiza → Jujuy",
+    "despegue_estimado": "21:00",
+    "despegue_real": null
+  },
+  {
+    "vuelo": "FO 5554",
+    "fecha": "2025-12-08",
+    "ruta": "Ezeiza → El Calafate",
+    "despegue_estimado": "16:25",
+    "despegue_real": null
+  },
+  {
+    "vuelo": "FO 5243",
+    "fecha": "2025-12-08",
+    "ruta": "Bariloche → Ezeiza",
+    "despegue_estimado": "12:00",
+    "despegue_real": null
+  },
+  {
+    "vuelo": "FO 5093",
+    "fecha": "2025-12-08",
+    "ruta": "Posadas → Aeroparque",
+    "despegue_estimado": "16:55",
+    "despegue_real": null
+  },
+  {
+    "vuelo": "FO 5231",
+    "fecha": "2025-12-08",
+    "ruta": "Sgo. del Estero → Aeroparque",
+    "despegue_estimado": "19:15",
+    "despegue_real": null
+  },
+  {
+    "vuelo": "FO 5150",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Corrientes",
+    "despegue_estimado": "08:00",
+    "despegue_real": null
+  },
+  {
+    "vuelo": "FO 5230",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Sgo. del Estero",
+    "despegue_estimado": "17:00",
+    "despegue_real": null
+  },
+  {
+    "vuelo": "FO 5054",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Mendoza",
+    "despegue_estimado": "13:55",
+    "despegue_real": null
+  },
+  {
+    "vuelo": "FO 5055",
+    "fecha": "2025-12-08",
+    "ruta": "Mendoza → Aeroparque",
+    "despegue_estimado": "16:25",
+    "despegue_real": null
+  },
+  {
+    "vuelo": "FO 5030",
+    "fecha": "2025-12-08",
+    "ruta": "Ezeiza → Ushuaia",
+    "despegue_estimado": "07:10",
+    "despegue_real": "17:40"
+  },
+  {
+    "vuelo": "FO 5950",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Florianopolis",
+    "despegue_estimado": "00:35",
+    "despegue_real": "10:04"
+  },
+  {
+    "vuelo": "FO 5300",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Neuquen",
+    "despegue_estimado": "08:05",
+    "despegue_real": "14:36"
+  },
+  {
+    "vuelo": "FO 5100",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Iguazú",
+    "despegue_estimado": "07:15",
+    "despegue_real": "11:46"
+  },
+  {
+    "vuelo": "FO 5101",
+    "fecha": "2025-12-08",
+    "ruta": "Iguazú → Aeroparque",
+    "despegue_estimado": "09:45",
+    "despegue_real": "14:10"
+  },
+  {
+    "vuelo": "FO 5006",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Córdoba",
+    "despegue_estimado": "15:45",
+    "despegue_real": "20:05"
+  },
+  {
+    "vuelo": "FO 5007",
+    "fecha": "2025-12-08",
+    "ruta": "Córdoba → Aeroparque",
+    "despegue_estimado": "13:35",
+    "despegue_real": "17:42"
+  },
+  {
+    "vuelo": "FO 5520",
+    "fecha": "2025-12-08",
+    "ruta": "Córdoba → Neuquen",
+    "despegue_estimado": "17:55",
+    "despegue_real": "21:59"
+  },
+  {
+    "vuelo": "FO 5212",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Tucuman",
+    "despegue_estimado": "12:45",
+    "despegue_real": "16:47"
+  },
+  {
+    "vuelo": "FO 5095",
+    "fecha": "2025-12-08",
+    "ruta": "Posadas → Ezeiza",
+    "despegue_estimado": "20:00",
+    "despegue_real": "23:58"
+  },
+  {
+    "vuelo": "FO 5094",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Posadas",
+    "despegue_estimado": "17:55",
+    "despegue_real": "21:50"
+  },
+  {
+    "vuelo": "FO 5213",
+    "fecha": "2025-12-08",
+    "ruta": "Tucuman → Aeroparque",
+    "despegue_estimado": "15:15",
+    "despegue_real": "19:06"
+  },
+  {
+    "vuelo": "FO 5481",
+    "fecha": "2025-12-08",
+    "ruta": "Salta → Córdoba",
+    "despegue_estimado": "11:30",
+    "despegue_real": "15:06"
+  },
+  {
+    "vuelo": "FO 5550",
+    "fecha": "2025-12-08",
+    "ruta": "Ezeiza → El Calafate",
+    "despegue_estimado": "06:30",
+    "despegue_real": "09:55"
+  },
+  {
+    "vuelo": "FO 5050",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Mendoza",
+    "despegue_estimado": "05:00",
+    "despegue_real": "08:21"
+  },
+  {
+    "vuelo": "FO 5441",
+    "fecha": "2025-12-08",
+    "ruta": "Bariloche → Córdoba",
+    "despegue_estimado": "18:35",
+    "despegue_real": "20:48"
+  },
+  {
+    "vuelo": "FO 5182",
+    "fecha": "2025-12-08",
+    "ruta": "Ezeiza → Jujuy",
+    "despegue_estimado": "13:15",
+    "despegue_real": "15:22"
+  },
+  {
+    "vuelo": "FO 5183",
+    "fecha": "2025-12-08",
+    "ruta": "Jujuy → Aeroparque",
+    "despegue_estimado": "16:20",
+    "despegue_real": "18:05"
+  },
+  {
+    "vuelo": "FO 5906",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Rio de Janeiro",
+    "despegue_estimado": "00:10",
+    "despegue_real": "01:54"
+  },
+  {
+    "vuelo": "FO 5160",
+    "fecha": "2025-12-08",
+    "ruta": "Ezeiza → Salta",
+    "despegue_estimado": "10:45",
+    "despegue_real": "12:12"
+  },
+  {
+    "vuelo": "FO 5104",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Iguazú",
+    "despegue_estimado": "19:50",
+    "despegue_real": "21:03"
+  },
+  {
+    "vuelo": "FO 5440",
+    "fecha": "2025-12-08",
+    "ruta": "Córdoba → Bariloche",
+    "despegue_estimado": "15:35",
+    "despegue_real": "16:47"
+  },
+  {
+    "vuelo": "FO 5119",
+    "fecha": "2025-12-08",
+    "ruta": "Iguazú → Ezeiza",
+    "despegue_estimado": "22:25",
+    "despegue_real": "23:30"
+  },
+  {
+    "vuelo": "FO 5248",
+    "fecha": "2025-12-08",
+    "ruta": "Ezeiza → Bariloche",
+    "despegue_estimado": "19:55",
+    "despegue_real": "20:58"
+  },
+  {
+    "vuelo": "FO 5004",
+    "fecha": "2025-12-08",
+    "ruta": "Ezeiza → Córdoba",
+    "despegue_estimado": "13:25",
+    "despegue_real": "14:17"
+  },
+  {
+    "vuelo": "FO 5161",
+    "fecha": "2025-12-08",
+    "ruta": "Salta → Ezeiza",
+    "despegue_estimado": "08:05",
+    "despegue_real": "08:54"
+  },
+  {
+    "vuelo": "FO 5166",
+    "fecha": "2025-12-08",
+    "ruta": "Ezeiza → Salta",
+    "despegue_estimado": "19:45",
+    "despegue_real": "20:31"
+  },
+  {
+    "vuelo": "FO 5005",
+    "fecha": "2025-12-08",
+    "ruta": "Córdoba → Ezeiza",
+    "despegue_estimado": "11:15",
+    "despegue_real": "12:01"
+  },
+  {
+    "vuelo": "FO 5002",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Córdoba",
+    "despegue_estimado": "08:55",
+    "despegue_real": "09:34"
+  },
+  {
+    "vuelo": "FO 5241",
+    "fecha": "2025-12-08",
+    "ruta": "Bariloche → Ezeiza",
+    "despegue_estimado": "08:05",
+    "despegue_real": "08:43"
+  },
+  {
+    "vuelo": "FO 5057",
+    "fecha": "2025-12-08",
+    "ruta": "Mendoza → Aeroparque",
+    "despegue_estimado": "20:55",
+    "despegue_real": "21:33"
+  },
+  {
+    "vuelo": "FO 5032",
+    "fecha": "2025-12-08",
+    "ruta": "Ezeiza → Ushuaia",
+    "despegue_estimado": "11:00",
+    "despegue_real": "11:35"
+  },
+  {
+    "vuelo": "FO 5059",
+    "fecha": "2025-12-08",
+    "ruta": "Mendoza → Aeroparque",
+    "despegue_estimado": "22:00",
+    "despegue_real": "22:34"
+  },
+  {
+    "vuelo": "FO 5240",
+    "fecha": "2025-12-08",
+    "ruta": "Ezeiza → Bariloche",
+    "despegue_estimado": "05:10",
+    "despegue_real": "05:42"
+  },
+  {
+    "vuelo": "FO 5167",
+    "fecha": "2025-12-08",
+    "ruta": "Salta → Ezeiza",
+    "despegue_estimado": "22:45",
+    "despegue_real": "23:14"
+  },
+  {
+    "vuelo": "FO 5003",
+    "fecha": "2025-12-08",
+    "ruta": "Córdoba → Aeroparque",
+    "despegue_estimado": "06:45",
+    "despegue_real": "07:12"
+  },
+  {
+    "vuelo": "FO 5900",
+    "fecha": "2025-12-08",
+    "ruta": "Ezeiza → Rio de Janeiro",
+    "despegue_estimado": "06:20",
+    "despegue_real": "06:45"
+  },
+  {
+    "vuelo": "FO 5249",
+    "fecha": "2025-12-08",
+    "ruta": "Bariloche → Ezeiza",
+    "despegue_estimado": "23:35",
+    "despegue_real": "23:57"
+  },
+  {
+    "vuelo": "FO 5330",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → San Juan",
+    "despegue_estimado": "12:30",
+    "despegue_real": "12:45"
+  },
+  {
+    "vuelo": "FO 5320",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Puerto Madryn",
+    "despegue_estimado": "13:05",
+    "despegue_real": "13:17"
+  },
+  {
+    "vuelo": "FO 5056",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Mendoza",
+    "despegue_estimado": "18:20",
+    "despegue_real": "18:32"
+  },
+  {
+    "vuelo": "FO 5952",
+    "fecha": "2025-12-08",
+    "ruta": "Ezeiza → Florianopolis",
+    "despegue_estimado": "14:40",
+    "despegue_real": "14:51"
+  },
+  {
+    "vuelo": "FO 5058",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Mendoza",
+    "despegue_estimado": "19:25",
+    "despegue_real": "19:35"
+  },
+  {
+    "vuelo": "FO 5112",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Iguazú",
+    "despegue_estimado": "01:00",
+    "despegue_real": "01:07"
+  },
+  {
+    "vuelo": "FO 5331",
+    "fecha": "2025-12-08",
+    "ruta": "San Juan → Aeroparque",
+    "despegue_estimado": "14:55",
+    "despegue_real": "15:01"
+  },
+  {
+    "vuelo": "FO 5321",
+    "fecha": "2025-12-08",
+    "ruta": "Puerto Madryn → Aeroparque",
+    "despegue_estimado": "15:40",
+    "despegue_real": "15:40"
+  },
+  {
+    "vuelo": "FO 5304",
+    "fecha": "2025-12-08",
+    "ruta": "Aeroparque → Neuquen",
+    "despegue_estimado": "18:10",
+    "despegue_real": "18:09"
+  },
+  {
+    "vuelo": "FO 5990",
+    "fecha": "2025-12-08",
+    "ruta": "Ezeiza → Ushuaia",
+    "despegue_estimado": "06:05",
+    "despegue_real": "06:03"
+  },
+  {
+    "vuelo": "FO 5113",
+    "fecha": "2025-12-08",
+    "ruta": "Iguazú → Ezeiza",
+    "despegue_estimado": "20:10",
+    "despegue_real": "20:05"
+  },
+  {
+    "vuelo": "FO 5880",
+    "fecha": "2025-12-08",
+    "ruta": "Iguazú → LIM",
+    "despegue_estimado": "05:05",
+    "despegue_real": "04:58"
+  },
+  {
+    "vuelo": "FO 5051",
+    "fecha": "2025-12-08",
+    "ruta": "Mendoza → Aeroparque",
+    "despegue_estimado": "11:25",
+    "despegue_real": "10:46"
+  },
+  {
+    "vuelo": "FO 5480",
+    "fecha": "2025-12-08",
+    "ruta": "Córdoba → Salta",
+    "despegue_estimado": "09:20",
+    "despegue_real": "06:36"
+  },
+  {
     "vuelo": "FO 5091",
     "fecha": "2025-12-07",
     "ruta": "Posadas → Aeroparque",
