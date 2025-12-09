@@ -6,7 +6,6 @@ import Header from "./components/Header";
 import Info from "./components/Info";
 import Mean from "./components/Mean";
 import MostDelayedFlight from "./components/MostDelayedFlight";
-import WastedTime from "./components/WastedTime";
 
 function App() {
   return (
@@ -28,7 +27,6 @@ function App() {
           {/* RIGHT COLUMN — Mean + WastedTime + MostDelayed */}
           <div className="col-md-4 d-flex flex-column gap-4">
             <Mean />
-            <WastedTime />
             <MostDelayedFlight />
           </div>
         </div>

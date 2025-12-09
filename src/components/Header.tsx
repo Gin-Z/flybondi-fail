@@ -2,7 +2,7 @@
 import { useFlights } from "../context/FlightsContext";
 
 const Header = () => {
-    const { date, setDate, loading, error, flights } = useFlights();
+    const { date, setDate, loading, error} = useFlights();
 
     function formatDate() {
         const d = new Date(date);
@@ -77,11 +77,6 @@ const Header = () => {
                     <div className="alert alert-danger mt-2" role="alert">
                         {error}
                     </div>
-                )}
-                {!loading && !error && (
-                    <p className="text-muted mt-2">
-                        {flights.length} vuelos encontrados
-                    </p>
                 )}
             </div>
         </div>
