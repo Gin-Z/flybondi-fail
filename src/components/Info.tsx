@@ -1,26 +1,15 @@
 // src/components/Info.tsx
 import { useFlights } from "../context/FlightsContext";
 import type { Flight } from "../types/Flight.interface";
+import { getAirportName } from "../utils/airportNames";
 
 const Info = () => {
     const { flights, loading } = useFlights();
 
     // Función para calcular la demora en minutos
     const calculateDelay = (flight: Flight): number | null => {
-        if (!flight.despegue_real) return null; // Cancelado
-
-        const [estimatedHours, estimatedMinutes] = flight.despegue_estimado.split(':').map(Number);
-        const [realHours, realMinutes] = flight.despegue_real.split(':').map(Number);
-
-        const estimatedTotalMinutes = estimatedHours * 60 + estimatedMinutes;
-        let realTotalMinutes = realHours * 60 + realMinutes;
-
-        // Si el vuelo real es mucho menor que el estimado, probablemente cruzó medianoche
-        if (realTotalMinutes < estimatedTotalMinutes - 12 * 60) {
-            realTotalMinutes += 24 * 60; // Sumar 24 horas al tiempo real
-        }
-
-        return realTotalMinutes - estimatedTotalMinutes;
+        if (!flight.atda) return null; // Cancelado
+        return flight.delta;
     };
 
     // Formatear el tiempo de demora
@@ -41,6 +30,13 @@ const Info = () => {
         if (delay >= 30) return "status-45_30";
         if (delay >= 15) return "status-30_15";
         return "status-15_0";
+    };
+
+    // Función para formatear la ruta con nombres completos
+    const getRoute = (flight: Flight): string => {
+        const origen = getAirportName(flight.json.arpt);
+        const destino = getAirportName(flight.json.IATAdestorig);
+        return `${origen} → ${destino}`;
     };
 
     // Ordenar vuelos: cancelados primero, luego por demora (mayor a menor)
@@ -99,11 +95,11 @@ const Info = () => {
                             const delayClass = getDelayClass(delay);
                             
                             return (
-                                <tr key={`${flight.vuelo}-${index}`}>
-                                    <td>{flight.vuelo}</td>
-                                    <td>{flight.ruta}</td>
-                                    <td>{flight.despegue_estimado}</td>
-                                    <td>{flight.despegue_real || '-'}</td>
+                                <tr key={`${flight.aerolineas_flight_id}-${index}`}>
+                                    <td>{flight.json.nro}</td>
+                                    <td>{getRoute(flight)}</td>
+                                    <td>{flight.json.stda}</td>
+                                    <td>{flight.json.atda || '-'}</td>
                                     <td>
                                         {isCancelled ? (
                                             <strong className={delayClass}>Cancelado</strong>

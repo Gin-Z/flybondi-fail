@@ -6,21 +6,11 @@ const Flights = () => {
 
     // Función para calcular la demora en minutos
     const calculateDelay = (flight: Flight): number | null => {
-        if (!flight.despegue_real) return null; // Cancelado
-
-        const [estimatedHours, estimatedMinutes] = flight.despegue_estimado.split(':').map(Number);
-        const [realHours, realMinutes] = flight.despegue_real.split(':').map(Number);
-
-        const estimatedTotalMinutes = estimatedHours * 60 + estimatedMinutes;
-        let realTotalMinutes = realHours * 60 + realMinutes;
-
-        // Si el vuelo real es mucho menor que el estimado, probablemente cruzó medianoche
-        // (ej: programado 23:30, despegó 01:30 del día siguiente)
-        if (realTotalMinutes < estimatedTotalMinutes - 12 * 60) {
-            realTotalMinutes += 24 * 60; // Sumar 24 horas al tiempo real
-        }
-
-        return realTotalMinutes - estimatedTotalMinutes;
+        // Si no hay hora real de despegue, está cancelado
+        if (!flight.atda) return null;
+        
+        // La API ya nos da el delta calculado en minutos
+        return flight.delta;
     };
 
     // Función para obtener la clase CSS según la demora
@@ -64,7 +54,7 @@ const Flights = () => {
 
     // Calcular estadísticas
     const totalFlights = flights.length;
-    const cancelledFlights = flights.filter(f => !f.despegue_real).length;
+    const cancelledFlights = flights.filter(f => !f.atda).length;
     const delayedOver45 = flights.filter(f => {
         const delay = calculateDelay(f);
         return delay !== null && delay > 45;

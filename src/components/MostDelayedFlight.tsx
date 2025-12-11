@@ -1,25 +1,14 @@
 import { useFlights } from "../context/FlightsContext";
 import type { Flight } from "../types/Flight.interface";
+import { getAirportName } from "../utils/airportNames";
 
 const MostDelayedFlight = () => {
     const { flights, loading } = useFlights();
 
     // Función para calcular la demora en minutos
     const calculateDelay = (flight: Flight): number | null => {
-        if (!flight.despegue_real) return null; // Cancelado
-
-        const [estimatedHours, estimatedMinutes] = flight.despegue_estimado.split(':').map(Number);
-        const [realHours, realMinutes] = flight.despegue_real.split(':').map(Number);
-
-        const estimatedTotalMinutes = estimatedHours * 60 + estimatedMinutes;
-        let realTotalMinutes = realHours * 60 + realMinutes;
-
-        // Si el vuelo real es mucho menor que el estimado, probablemente cruzó medianoche
-        if (realTotalMinutes < estimatedTotalMinutes - 12 * 60) {
-            realTotalMinutes += 24 * 60; // Sumar 24 horas al tiempo real
-        }
-
-        return realTotalMinutes - estimatedTotalMinutes;
+        if (!flight.atda) return null; // Cancelado
+        return flight.delta;
     };
 
     // Formatear el tiempo de demora
@@ -75,13 +64,15 @@ const MostDelayedFlight = () => {
     }
 
     const { flight, delay } = result;
-    const ruta = flight.ruta.replace('→', 'a');
+    const origen = getAirportName(flight.json.arpt);
+    const destino = getAirportName(flight.json.destorig);
+    const ruta = `${origen} a ${destino}`;
 
     return (
         <div className="card p-3 text-center">
             <div className="card-body">
                 <p className="card-text">
-                    El vuelo más atrasado fue el {flight.vuelo} de {ruta}, que salió{' '}
+                    El vuelo más atrasado fue el {flight.json.nro} de {ruta}, que salió{' '}
                     <strong className="text-danger">{formatDelay(delay)} tarde</strong>. ¡Qué mal!
                 </p>
             </div>
