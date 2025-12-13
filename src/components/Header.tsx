@@ -24,7 +24,7 @@ const Header = () => {
     }
 
     const handlePrevious = () => {
-        setDate(prev => {
+        setDate((prev: Date) => {
             const d = new Date(prev);
             d.setDate(d.getDate() - 1);
             return d;
@@ -32,7 +32,7 @@ const Header = () => {
     };
 
     const handleNext = () => {
-        setDate(next => {
+        setDate((next: Date) => {
             const d = new Date(next);
             d.setDate(d.getDate() + 1);
             return d;

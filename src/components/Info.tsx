@@ -55,9 +55,11 @@ const Info = () => {
 
     if (loading) {
         return (
-            <div className="card p-3 text-center">
-                <div className="spinner-border" role="status">
-                    <span className="visually-hidden">Cargando...</span>
+            <div className="card p-3">
+                <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '200px' }}>
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Cargando...</span>
+                    </div>
                 </div>
             </div>
         );

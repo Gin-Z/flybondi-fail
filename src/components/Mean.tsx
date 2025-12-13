@@ -45,9 +45,11 @@ const Mean = () => {
 
   if (loading) {
     return (
-      <div className="card p-3 text-center">
-        <div className="spinner-border spinner-border-sm" role="status">
-          <span className="visually-hidden">Cargando...</span>
+      <div className="card p-3">
+        <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '150px' }}>
+          <div className="spinner-border spinner-border-sm" role="status">
+            <span className="visually-hidden">Cargando...</span>
+          </div>
         </div>
       </div>
     );
